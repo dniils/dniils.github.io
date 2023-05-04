@@ -1,6 +1,7 @@
 :root {
   --dark: rgb(18, 19, 20);
   --light: rgb(239, 238, 237);
+  --extra-light: rgb(255, 255, 255);
   --red: rgb(227, 52, 47);
   --pink: rgb(234, 83, 214);
   --green: rgb(56, 193, 114);
@@ -9,6 +10,6 @@
   --aqua: rgb(127, 255, 212);
 
   --text-color: var(--dark);
-  --bio-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  --container-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }

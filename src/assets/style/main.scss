@@ -15,6 +15,11 @@ html {
 
 body {
   background-color: var(--light);
+  // background-image: url(../images/bg.gif);
+  // background-blend-mode: screen;
+  // background-position-x: 40vw;
+  // background-position-y: 20vh;
+  // background-repeat: no-repeat;
 
   ::-moz-selection {
     /* Code for Firefox */
