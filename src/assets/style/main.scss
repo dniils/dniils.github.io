@@ -1,0 +1,34 @@
+@import "BioComponent", "ProjectsComponent";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: calc(16px + 0.33vw);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--light);
+  // background-image: url(../images/bg.gif);
+  // background-blend-mode: screen;
+  // background-position-x: 40vw;
+  // background-position-y: 20vh;
+  // background-repeat: no-repeat;
+
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: var(--light);
+    background: var(--dark);
+  }
+
+  ::selection {
+    color: var(--light);
+    background: var(--dark);
+  }
+}
