@@ -1,207 +1,51 @@
 <template>
   <div class="projects-container">
     <div class="projects">
-      <div class="projects__item">
+      <div v-for="repo in store.repos" :key="repo" class="projects__item">
         <div class="projects__info">
-          <div class="projects__title">Users Router</div>
+          <div class="projects__title">{{ repo.name }}</div>
           <div class="projects__description">
-            Gather user data from
-            <a class="projects__link" href="https://reqres.in/">Reqres</a> and
-            store it. Load more users by page and view detailed information on
-            separate pages without the need for page refresh.
+            {{ repo.description }}
+          </div>
+          <div class="projects__technologies">
+            <span
+              v-for="lang in repo.languages"
+              :key="lang"
+              class="projects__technology"
+              >{{ lang }}</span
+            >
           </div>
           <div class="projects__links">
             <a
-              href="https://github.com/dniils/users-router-vuejs"
+              :href="`https://github.com/dniils/${repo.name}`"
               class="projects__link"
+              target="_blank"
               >code</a
             >
             <a
-              href="https://dniils.github.io/users-router-vuejs"
+              :href="`https://dniils.github.io/${repo.name}`"
               class="projects__link"
+              target="_blank"
               >demo</a
             >
           </div>
         </div>
         <img
           class="projects__image"
-          src="@/assets/images/users-router-vuejs.jpg"
-          alt="users-router-vuejs"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">Angular Component</div>
-          <div class="projects__description">
-            Angular component with a button, by clicking on which you get a
-            random icon from fontawesome with a 3 sec delay, each click is
-            handled.
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/dniils/angular-test-task"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://dniils.github.io/angular-test-task/"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/angular-test-task.jpg"
-          alt="angular-test-task"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">Shelter</div>
-          <div class="projects__description">
-            2-page website for pets shelter. Responsive pixel-perfect layout,
-            vanilla js slider, burger menu, pagination, and modal windows.
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/rolling-scopes-school/dniils-JSFE2023Q1/tree/shelter-part3/shelter"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://rolling-scopes-school.github.io/dniils-JSFE2023Q1/shelter/index.html"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/shelter-website.jpg"
-          alt="shelter-website"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">Product Cards</div>
-          <div class="projects__description">
-            A project I did as a test task for a vacancy. Tabs, responsive
-            layout.
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/dniils/product-card"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://dniils.github.io/product-card/"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/product-card.jpg"
-          alt="product-card"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">Card Details</div>
-          <div class="projects__description">
-            A form for card info with input validation. Challange by
-            <a
-              href="https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw"
-              class="projects__link"
-            >
-              FrontendMentor
-            </a>
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/dniils/product-card"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://dniils.github.io/product-card/"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/interactive-card-details-form-main.jpg"
-          alt="interactive-card-details-form-main"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">Rating Form</div>
-          <div class="projects__description">
-            Simple star rating field component developed using Vue.js. Challenge
-            by
-            <a
-              href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI"
-              class="projects__link"
-            >
-              FrontendMentor
-            </a>
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/dniils/interactive-rating-component-main"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://dniils.github.io/interactive-rating-component-main/"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/interactive-rating-component-main.jpg"
-          alt="cssBayan"
-        />
-      </div>
-      <div class="projects__item">
-        <div class="projects__info">
-          <div class="projects__title">CSS Bayan</div>
-          <div class="projects__description">
-            Adaptive memes accordion with tabs opening by hover. Task issued by
-            <a href="https://rs.school/" class="projects__link"
-              >RollingScopes</a
-            >
-            school
-          </div>
-          <div class="projects__links">
-            <a
-              href="https://github.com/dniils/cssBayan/tree/gh-pages/cssBayan"
-              class="projects__link"
-              >code</a
-            >
-            <a
-              href="https://dniils.github.io/cssBayan/cssBayan/index.html"
-              class="projects__link"
-              >demo</a
-            >
-          </div>
-        </div>
-        <img
-          class="projects__image"
-          src="@/assets/images/cssBayan.jpg"
-          alt="cssBayan"
+          :src="require(`@/assets/images/${repo.name}.jpg`)"
+          :alt="`${repo.name}`"
         />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useReposStore } from "@/store/index.js";
+
+const store = useReposStore();
+
+if (store.repos.length === 0) {
+  store.fetchRepos();
+}
+</script>

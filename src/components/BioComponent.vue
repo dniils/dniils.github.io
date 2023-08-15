@@ -17,13 +17,14 @@
       </p>
       <p class="bio__contacts">
         If you'd like to have me as a junior member of your team, please
-        <a class="bio__link" href="https://www.t.me/dniils"
+        <a class="bio__link" href="https://www.t.me/dniils" target="_blank"
           >contact me on Telegram</a
         >
         or
         <a
           class="bio__link"
           href="https://www.linkedin.com/in/daniil-shitikov-119731229/"
+          target="_blank"
           >LinkedIn</a
         >.
       </p>

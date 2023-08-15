@@ -33,27 +33,25 @@
   }
 
   &__item {
-    // background-color: var(--blue);
     border-radius: 5px;
-    border-top: 0.5rem solid var(--light);
-    // outline: 1px solid transparent;
+    border-top: 0.5rem solid transparent;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
     position: relative;
     user-select: none;
 
     &:hover {
+      background-color: var(--blue);
       border-color: var(--blue);
-      // outline-color: var(--blue);
 
       & > .projects__image {
-        // opacity: 0.8;
+        transition: opacity 0.2s ease-in-out;
+        opacity: 0.8;
         border-radius: 0;
       }
 
       & > .projects__info {
-        opacity: 0.95;
-        height: 100%;
+        transform: translateY(0);
       }
     }
   }
@@ -62,37 +60,25 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 0.5s ease-in-out;
-    transition: border-radius 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     border-radius: 5px;
   }
 
   &__info {
     position: absolute;
     width: 100%;
-    height: 0;
-    background-color: var(--extra-light);
-    opacity: 0;
+    height: 100%;
+    background-color: var(--extra-light-transparent);
     transition: all 0.5s ease-in-out;
-    z-index: 1;
     color: var(--dark);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 0.5rem 1rem;
+    transform: translateY(-100%);
+    z-index: 1;
+    // border-bottom: 0.5rem solid var(--blue);
   }
-
-  // code {
-  //   opacity: 0.7;
-  //   font-size: 0.6rem;
-  //   display: flex;
-  //   align-items: center;
-
-  //   background-color: var(--light);
-  //   padding: 1px 3px;
-  //   border-radius: 5px;
-  //   margin-left: 0.2rem;
-  // }
 
   &__title {
     font-size: 1rem;
@@ -101,6 +87,24 @@
 
   &__description {
     text-align: justify;
+  }
+
+  &__technologies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-family: monospace;
+    row-gap: 0.2rem;
+  }
+
+  &__technology {
+    font-size: calc(12px + 0.33vw);
+    color: var(--extra-light);
+    background-color: var(--blue);
+    border-radius: 5px;
+    padding: 0.1rem 0.3rem;
+    margin-right: 0.3rem;
   }
 
   &__links {
